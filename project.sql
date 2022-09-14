@@ -37,7 +37,7 @@ select distinct State from Project.data1 where lower(State) like 'a%';
 
 -- Joining both tables
 
--- Population in previous senses
+-- Population in previous census
 select sum(m.previous_census_pop) previous_census_pop,sum(m.current_census_pop) current_census_pop from (
 select e.state, sum(e.previous_census_pop), sum(e.current_census_pop) from
 (select d.district ,d.state, round(d.population/(1+d.growth),0) previous_census_pop, d.population current_census_pop from
